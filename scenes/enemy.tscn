@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvc11wosumlu4"]
+
+[ext_resource type="Script" uid="uid://y12iqlbytw2e" path="res://scripts/enemy.gd" id="1_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://dgjtxjclpufrj" path="res://assets/sprites/bacteria_normal.png" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://pghljxwoq2lt" path="res://assets/sprites/bacteria_scared.png" id="2_4ra3w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5uy6h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_md0e3")
+}],
+"loop": false,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4ra3w")
+}],
+"loop": true,
+"name": &"scared",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c4w8v"]
+radius = 27.0
+
+[node name="enemy" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_4ra3w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.57628e-07, 3.57628e-07)
+scale = Vector2(0.111328, 0.105859)
+sprite_frames = SubResource("SpriteFrames_5uy6h")
+animation = &"scared"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_c4w8v")
+
+[node name="DirectionTimer" type="Timer" parent="." groups=["enemies"]]
+wait_time = 0.6
+autostart = true

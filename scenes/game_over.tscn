@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5jakb7of68t2"]
+
+[ext_resource type="Script" uid="uid://bmnorypi0oq4n" path="res://scripts/game_over.gd" id="1_wqhvx"]
+[ext_resource type="Texture2D" uid="uid://dk0ag3qfe2so1" path="res://assets/sprites/background_menu.jpg" id="2_tbwuq"]
+[ext_resource type="AudioStream" uid="uid://cb277pfyo5yjt" path="res://assets/audio/gameover.wav" id="3_tbwuq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_racf3"]
+font_size = 300
+
+[node name="Game Over" type="CanvasLayer"]
+script = ExtResource("1_wqhvx")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tbwuq")
+
+[node name="Title" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 150.0
+offset_right = 1818.0
+offset_bottom = 971.0
+text = "GAME OVER
+"
+label_settings = SubResource("LabelSettings_racf3")
+
+[node name="RetryButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 687.0
+offset_top = 517.0
+offset_right = 1247.0
+offset_bottom = 704.0
+text = "REINICIAR
+"
+
+[node name="ExitButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 766.0
+offset_top = 772.0
+offset_right = 1158.0
+offset_bottom = 913.0
+text = "EXIT"
+
+[node name="AutoReturnTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="GameOverMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_tbwuq")
+volume_db = -0.029
+autoplay = true

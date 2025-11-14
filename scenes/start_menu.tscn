@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=3 uid="uid://creqn10wn48ab"]
+
+[ext_resource type="Script" uid="uid://br57cvwcxwkql" path="res://scripts/start_menu.gd" id="1_m7x51"]
+[ext_resource type="Texture2D" uid="uid://dk0ag3qfe2so1" path="res://assets/sprites/background_menu.jpg" id="2_h61rw"]
+[ext_resource type="AudioStream" uid="uid://xgshjsv60cln" path="res://assets/audio/start.wav" id="3_fcv5n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4v6gu"]
+font_size = 230
+font_color = Color(1, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nxjfj"]
+font_size = 35
+
+[sub_resource type="Theme" id="Theme_u4qax"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5byqq"]
+bg_color = Color(0.12874, 0.693112, 0.603451, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.688493, 0.109718, 0.82456, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_e58y3"]
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_m7x51")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Control"]
+modulate = Color(0.25039, 0.171924, 0, 1)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_h61rw")
+
+[node name="Title" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 37.0
+offset_right = 1624.0
+offset_bottom = 485.0
+text = "TRASH MAN"
+label_settings = SubResource("LabelSettings_4v6gu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Watermark" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1506.0
+offset_top = 1030.0
+offset_right = 2511.0
+offset_bottom = 1296.0
+text = "ALUNOS UNISUL SIGMA"
+label_settings = SubResource("LabelSettings_nxjfj")
+
+[node name="StartButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 661.0
+offset_top = 506.0
+offset_right = 1226.0
+offset_bottom = 694.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_u4qax")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5byqq")
+text = "START GAME
+"
+icon = SubResource("ViewportTexture_e58y3")
+
+[node name="ExitButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 684.0
+offset_top = 762.0
+offset_right = 1186.0
+offset_bottom = 923.0
+text = "EXIT
+
+"
+
+[node name="StartSfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_fcv5n")

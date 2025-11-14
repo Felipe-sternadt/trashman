@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbxab2sx62aeu"]
+
+[ext_resource type="Script" uid="uid://c33aosslnsatj" path="res://scripts/game_win.gd" id="1_cnu5t"]
+[ext_resource type="Texture2D" uid="uid://dk0ag3qfe2so1" path="res://assets/sprites/background_menu.jpg" id="2_l1273"]
+[ext_resource type="AudioStream" uid="uid://ccs268ybpvu80" path="res://assets/audio/win.mp3" id="3_l1273"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ej5r"]
+font_size = 120
+font_color = Color(1, 0.203922, 0, 1)
+
+[node name="Game Win" type="CanvasLayer"]
+script = ExtResource("1_cnu5t")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WinMusic" type="AudioStreamPlayer2D" parent="Control"]
+stream = ExtResource("3_l1273")
+volume_db = -3.0
+autoplay = true
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_l1273")
+
+[node name="Title" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 201.0
+offset_right = 1685.0
+offset_bottom = 474.0
+text = "PAREBÉNS, VOCÊ VENCEU!"
+label_settings = SubResource("LabelSettings_7ej5r")
+
+[node name="RetryButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 716.0
+offset_top = 434.0
+offset_right = 1213.0
+offset_bottom = 593.0
+text = "REINICIAR
+"
+
+[node name="ExitButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 787.0
+offset_top = 674.0
+offset_right = 1139.0
+offset_bottom = 825.0
+text = "EXIT
+"
+
+[node name="AutoReturnTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true

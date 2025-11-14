@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2yev6ufq0wxj"]
+
+[ext_resource type="Script" uid="uid://kerth6ugl07h" path="res://scripts/level_select.gd" id="1_p0wlc"]
+[ext_resource type="Texture2D" uid="uid://dk0ag3qfe2so1" path="res://assets/sprites/background_menu.jpg" id="2_2epne"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rif6e"]
+font_size = 100
+
+[node name="Seletor de Fase" type="CanvasLayer"]
+script = ExtResource("1_p0wlc")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2epne")
+
+[node name="SelectLevelLabel1" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 211.0
+offset_right = 1407.0
+offset_bottom = 444.0
+text = "SELECIONE A FASE"
+label_settings = SubResource("LabelSettings_rif6e")
+
+[node name="Level1Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 402.0
+offset_right = 1212.0
+offset_bottom = 558.0
+text = "FASE 1
+"
+
+[node name="BackButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 621.0
+offset_top = 609.0
+offset_right = 1297.0
+offset_bottom = 887.0
+text = "VOLTAR
+"

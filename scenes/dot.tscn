@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://blopy0xuivig2"]
+
+[ext_resource type="Script" uid="uid://cyil5aiva01ty" path="res://scripts/dot.gd" id="1_1c7to"]
+[ext_resource type="Texture2D" uid="uid://bmg0y3ud1bm2e" path="res://assets/sprites/trash.png" id="1_c4igg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1c7to"]
+radius = 24.0832
+
+[node name="lixo" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_1c7to")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(0.0810547, 0.0844727)
+texture = ExtResource("1_c4igg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1c7to")
