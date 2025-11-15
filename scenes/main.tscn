@@ -131,6 +131,11 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_o5qli")
 
+[node name="Background2" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_o5qli")
+
 [node name="Walls" type="Node2D" parent="."]
 
 [node name="Wall1" type="StaticBody2D" parent="Walls"]
@@ -367,10 +372,13 @@ shape = SubResource("RectangleShape2D_5he1u")
 position = Vector2(1184, 486)
 
 [node name="lixo18" parent="Items" instance=ExtResource("3_jyhfs")]
-position = Vector2(1343, 259)
+position = Vector2(1244, 149)
+
+[node name="lixo19" parent="Items" instance=ExtResource("3_jyhfs")]
+position = Vector2(1242, 217)
 
 [node name="lixo2" parent="Items" instance=ExtResource("3_jyhfs")]
-position = Vector2(1730, 86)
+position = Vector2(1244, 86)
 
 [node name="lixo3" parent="Items" instance=ExtResource("3_jyhfs")]
 position = Vector2(1840, 105)
@@ -379,7 +387,7 @@ position = Vector2(1840, 105)
 position = Vector2(1839, 181)
 
 [node name="lixo5" parent="Items" instance=ExtResource("3_jyhfs")]
-position = Vector2(1103, 231)
+position = Vector2(1162, 82)
 
 [node name="lixo6" parent="Items" instance=ExtResource("3_jyhfs")]
 position = Vector2(1841, 339)
@@ -400,10 +408,22 @@ position = Vector2(1543, 433)
 position = Vector2(1462, 430)
 
 [node name="lixo12" parent="Items" instance=ExtResource("3_jyhfs")]
-position = Vector2(1359, 429)
+position = Vector2(1093, 290)
+
+[node name="lixo20" parent="Items" instance=ExtResource("3_jyhfs")]
+position = Vector2(1024, 293)
+
+[node name="lixo21" parent="Items" instance=ExtResource("3_jyhfs")]
+position = Vector2(960, 211)
+
+[node name="lixo23" parent="Items" instance=ExtResource("3_jyhfs")]
+position = Vector2(959, 143)
+
+[node name="lixo22" parent="Items" instance=ExtResource("3_jyhfs")]
+position = Vector2(959, 78)
 
 [node name="lixo13" parent="Items" instance=ExtResource("3_jyhfs")]
-position = Vector2(1270, 424)
+position = Vector2(1094, 218)
 
 [node name="lixo14" parent="Items" instance=ExtResource("3_jyhfs")]
 position = Vector2(1182, 655)
@@ -412,13 +432,55 @@ position = Vector2(1182, 655)
 position = Vector2(1185, 556)
 
 [node name="lixo16" parent="Items" instance=ExtResource("3_jyhfs")]
-position = Vector2(1179, 307)
+position = Vector2(1165, 217)
+
+[node name="lixo24" parent="Items" instance=ExtResource("3_jyhfs")]
+position = Vector2(1163, 293)
+
+[node name="lixo25" parent="Items" instance=ExtResource("3_jyhfs")]
+position = Vector2(1172, 360)
+
+[node name="lixo26" parent="Items" instance=ExtResource("3_jyhfs")]
+position = Vector2(1184, 424)
+
+[node name="lixo27" parent="Items" instance=ExtResource("3_jyhfs")]
+position = Vector2(1247, 424)
+
+[node name="lixo28" parent="Items" instance=ExtResource("3_jyhfs")]
+position = Vector2(1306, 426)
+
+[node name="lixo29" parent="Items" instance=ExtResource("3_jyhfs")]
+position = Vector2(1374, 427)
 
 [node name="lixo17" parent="Items" instance=ExtResource("3_jyhfs")]
-position = Vector2(687, 423)
+position = Vector2(658, 422)
 
 [node name="power lixo" parent="Items" instance=ExtResource("4_tbgi4")]
-position = Vector2(959, 421)
+position = Vector2(959, 285)
+
+[node name="power lixo5" parent="Items" instance=ExtResource("4_tbgi4")]
+position = Vector2(1246, 992)
+
+[node name="power lixo6" parent="Items" instance=ExtResource("4_tbgi4")]
+position = Vector2(1634, 602)
+
+[node name="power lixo7" parent="Items" instance=ExtResource("4_tbgi4")]
+position = Vector2(1552, 250)
+
+[node name="power lixo8" parent="Items" instance=ExtResource("4_tbgi4")]
+position = Vector2(1097, 84)
+
+[node name="power lixo4" parent="Items" instance=ExtResource("4_tbgi4")]
+position = Vector2(712, 729)
+
+[node name="power lixo3" parent="Items" instance=ExtResource("4_tbgi4")]
+position = Vector2(368, 92)
+
+[node name="power lixo2" parent="Items" instance=ExtResource("4_tbgi4")]
+position = Vector2(714, 422)
+
+[node name="power lixo9" parent="Items" instance=ExtResource("4_tbgi4")]
+position = Vector2(289, 544)
 
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2(570, 507)
@@ -456,6 +518,13 @@ offset_top = 15.0
 offset_right = 1843.0
 offset_bottom = 38.0
 text = "timer:"
+
+[node name="PowerLabel" type="Label" parent="CanvasLayer"]
+offset_left = 866.0
+offset_top = 9.0
+offset_right = 1262.0
+offset_bottom = 37.0
+text = "ESPECIAL:"
 
 [node name="PickupSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_85g3d")

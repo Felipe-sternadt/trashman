@@ -12,8 +12,7 @@ var dir: Vector2 = Vector2.ZERO
 
 
 func _ready() -> void:
-	# Configura as animações em tempo de execução usando seus assets
-	var frames := SpriteFrames.new()
+	var frames = SpriteFrames.new()
 
 	# RIGHT
 	frames.add_animation("right")
@@ -85,17 +84,23 @@ func _on_body_entered(body: Node) -> void:
 		return
 
 	if body.is_in_group("enemies"):
-		# Se bactéria vulnerável, player come
+
+		# Player COME inimigo vulnerável → +100 pontos
 		if body.has_method("is_vulnerable") and body.is_vulnerable():
+
 			if body.has_method("on_eaten"):
 				body.on_eaten()
 
 			var m = get_tree().current_scene
 			if m and m.has_method("enemy_eaten"):
-				m.enemy_eaten(100)
-		else:
-			# Player morre
-			alive = false
-			anim.play("die")
-			await anim.animation_finished
-			emit_signal("player_died")
+				m.enemy_eaten(100)  # 100 PONTOS POR INIMIGO
+			return
+
+		# Player MORRE
+		alive = false
+		anim.play("die")
+		anim.animation_finished.connect(_on_death_animation_finished)
+
+
+func _on_death_animation_finished() -> void:
+	emit_signal("player_died")

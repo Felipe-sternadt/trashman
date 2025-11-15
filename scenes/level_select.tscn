@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d2yev6ufq0wxj"]
 
 [ext_resource type="Script" uid="uid://kerth6ugl07h" path="res://scripts/level_select.gd" id="1_p0wlc"]
-[ext_resource type="Texture2D" uid="uid://dk0ag3qfe2so1" path="res://assets/sprites/background_menu.jpg" id="2_2epne"]
+[ext_resource type="Texture2D" uid="uid://o3c1fps1eu28" path="res://assets/sprites/select_background.jpg" id="2_p0wlc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rif6e"]
 font_size = 100
@@ -24,7 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_2epne")
+texture = ExtResource("2_p0wlc")
 
 [node name="SelectLevelLabel1" type="Label" parent="Control"]
 layout_mode = 0
