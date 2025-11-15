@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dk0ag3qfe2so1" path="res://assets/sprites/background_menu.jpg" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://rtdu8463qa3u" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://blopy0xuivig2" path="res://scenes/dot.tscn" id="3_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://cvucv1ygdniym" path="res://scenes/player.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://vo8r4sc5nopn" path="res://scenes/player.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cot7dab0hmhbo" path="res://scenes/power_dot.tscn" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cvc11wosumlu4" path="res://scenes/enemy.tscn" id="5_choun"]
 [ext_resource type="AudioStream" uid="uid://k074hpb0haek" path="res://assets/audio/pickup.wav" id="6_85g3d"]
@@ -501,7 +501,8 @@ position = Vector2(-202, -246)
 position = Vector2(124, -245)
 
 [node name="Player" parent="." instance=ExtResource("3_sugp2")]
-position = Vector2(960, 547)
+position = Vector2(959, 542)
+script = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

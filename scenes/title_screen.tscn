@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bn3xtg8um668h"]
+[gd_scene load_steps=12 format=3 uid="uid://bn3xtg8um668h"]
 
+[ext_resource type="Script" uid="uid://dlwblrejlnjc5" path="res://scripts/title_screen.gd" id="1_dc4i4"]
 [ext_resource type="Texture2D" uid="uid://daegavj7aegnb" path="res://assets/sprites/content.png" id="1_ig5kc"]
 [ext_resource type="Theme" uid="uid://dpm7ljvkyy1lv" path="res://default_btn.tres" id="2_05l2w"]
 [ext_resource type="Texture2D" uid="uid://kjryjxihc5o6" path="res://assets/sprites/texto_tela_inicial.png" id="2_ig5kc"]
@@ -102,6 +103,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dc4i4")
 
 [node name="bg" type="TextureRect" parent="."]
 layout_mode = 0

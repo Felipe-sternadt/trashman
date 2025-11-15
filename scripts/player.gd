@@ -10,7 +10,6 @@ signal player_died
 var alive: bool = true
 var dir: Vector2 = Vector2.ZERO
 
-
 func _ready() -> void:
 	var frames = SpriteFrames.new()
 
@@ -83,23 +82,28 @@ func _on_body_entered(body: Node) -> void:
 	if not alive:
 		return
 
-	if body.is_in_group("enemies"):
+	# ⛔ IGNORA colisão consigo mesmo
+	if body == self:
+		return
 
-		# Player COME inimigo vulnerável → +100 pontos
-		if body.has_method("is_vulnerable") and body.is_vulnerable():
+	# ⛔ Ignora colisões que não sejam inimigos
+	if not body.is_in_group("enemies"):
+		return
 
-			if body.has_method("on_eaten"):
-				body.on_eaten()
+	# Se inimigo vulnerável → PLAYER COME
+	if body.has_method("is_vulnerable") and body.is_vulnerable():
+		if body.has_method("on_eaten"):
+			body.on_eaten()
 
-			var m = get_tree().current_scene
-			if m and m.has_method("enemy_eaten"):
-				m.enemy_eaten(100)  # 100 PONTOS POR INIMIGO
-			return
+		var m = get_tree().current_scene
+		if m and m.has_method("enemy_eaten"):
+			m.enemy_eaten(100)  # 100 pontos fixos
+		return
 
-		# Player MORRE
-		alive = false
-		anim.play("die")
-		anim.animation_finished.connect(_on_death_animation_finished)
+	# Se inimigo normal → PLAYER MORRE
+	alive = false
+	anim.play("die")
+	anim.animation_finished.connect(_on_death_animation_finished)
 
 
 func _on_death_animation_finished() -> void:

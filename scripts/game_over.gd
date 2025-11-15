@@ -9,14 +9,11 @@ func _ready():
 	exit_btn.pressed.connect(_on_exit)
 	auto_timer.timeout.connect(_on_timeout)
 
-
 func _on_retry():
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
-
 func _on_exit():
-	get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
-
+	get_tree().change_scene_to_file("res://scenes/title_screen.tscn")
 
 func _on_timeout():
-	get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/title_screen.tscn")
