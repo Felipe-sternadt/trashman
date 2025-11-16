@@ -500,8 +500,6 @@ position = Vector2(-202, -246)
 [node name="enemy5" parent="Enemies" instance=ExtResource("5_choun")]
 position = Vector2(124, -245)
 
-[node name="Player" parent="." instance=ExtResource("3_sugp2")]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer"]
@@ -524,6 +522,10 @@ offset_top = 9.0
 offset_right = 1262.0
 offset_bottom = 37.0
 text = "ESPECIAL:"
+
+[node name="Player" parent="." instance=ExtResource("3_sugp2")]
+position = Vector2(957, 539)
+speed = 165.0
 
 [node name="PickupSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_85g3d")

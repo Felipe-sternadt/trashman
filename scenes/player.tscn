@@ -85,6 +85,8 @@ collision_mask = 13
 script = ExtResource("1_jej6c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+visibility_layer = 13
 scale = Vector2(1.78125, 1.6875)
 sprite_frames = SubResource("SpriteFrames_dx0e4")
 animation = &"left"
@@ -92,7 +94,7 @@ animation = &"left"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jm5j8")
 
-[node name="detector" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["player"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="detector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_ivps1")
