@@ -4,7 +4,6 @@ func _ready():
 	body_entered.connect(_on_enter)
 
 func _on_enter(body):
-	# ⬇️ NOVO: só o player ativa o power
 	if not body.is_in_group("player"):
 		return
 

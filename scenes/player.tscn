@@ -1,18 +1,18 @@
 [gd_scene load_steps=17 format=3 uid="uid://vo8r4sc5nopn"]
 
 [ext_resource type="Script" uid="uid://dcduv1ktnte0b" path="res://scripts/player.gd" id="1_jej6c"]
-[ext_resource type="Texture2D" uid="uid://beinlnxwybyis" path="res://assets/sprites/down_1.png" id="2_3v2ag"]
-[ext_resource type="Texture2D" uid="uid://c7ncg0rawlb68" path="res://assets/sprites/down_2.png" id="3_jej6c"]
-[ext_resource type="Texture2D" uid="uid://d0w31ntt20q2t" path="res://assets/sprites/down_3.png" id="4_f1ej7"]
-[ext_resource type="Texture2D" uid="uid://kvlxvwqml0qy" path="res://assets/sprites/left_1.png" id="5_oprun"]
-[ext_resource type="Texture2D" uid="uid://dsyh5raybtu1d" path="res://assets/sprites/left_2.png" id="6_a8ls1"]
-[ext_resource type="Texture2D" uid="uid://05ecn7fiquuu" path="res://assets/sprites/left_3.png" id="7_qfm1y"]
-[ext_resource type="Texture2D" uid="uid://5oct5llthu2x" path="res://assets/sprites/right_1.png" id="8_fulsm"]
-[ext_resource type="Texture2D" uid="uid://d2meurdnw8o1k" path="res://assets/sprites/right_2.png" id="9_4r5pv"]
-[ext_resource type="Texture2D" uid="uid://d3ujc6pc5nqph" path="res://assets/sprites/right_3.png" id="10_60mlk"]
-[ext_resource type="Texture2D" uid="uid://cfc10lg3i60n7" path="res://assets/sprites/up_1.png" id="11_jej6c"]
-[ext_resource type="Texture2D" uid="uid://bb28e3mkl5j8y" path="res://assets/sprites/up_2.png" id="12_f1ej7"]
-[ext_resource type="Texture2D" uid="uid://dbi03jw134owu" path="res://assets/sprites/up_3.png" id="12_i4ail"]
+[ext_resource type="Texture2D" uid="uid://beinlnxwybyis" path="res://assets/sprites/player/down_1.png" id="2_3v2ag"]
+[ext_resource type="Texture2D" uid="uid://c7ncg0rawlb68" path="res://assets/sprites/player/down_2.png" id="3_jej6c"]
+[ext_resource type="Texture2D" uid="uid://d0w31ntt20q2t" path="res://assets/sprites/player/down_3.png" id="4_f1ej7"]
+[ext_resource type="Texture2D" uid="uid://kvlxvwqml0qy" path="res://assets/sprites/player/left_1.png" id="5_oprun"]
+[ext_resource type="Texture2D" uid="uid://dsyh5raybtu1d" path="res://assets/sprites/player/left_2.png" id="6_a8ls1"]
+[ext_resource type="Texture2D" uid="uid://05ecn7fiquuu" path="res://assets/sprites/player/left_3.png" id="7_qfm1y"]
+[ext_resource type="Texture2D" uid="uid://5oct5llthu2x" path="res://assets/sprites/player/right_1.png" id="8_fulsm"]
+[ext_resource type="Texture2D" uid="uid://d2meurdnw8o1k" path="res://assets/sprites/player/right_2.png" id="9_4r5pv"]
+[ext_resource type="Texture2D" uid="uid://d3ujc6pc5nqph" path="res://assets/sprites/player/right_3.png" id="10_60mlk"]
+[ext_resource type="Texture2D" uid="uid://cfc10lg3i60n7" path="res://assets/sprites/player/up_1.png" id="11_jej6c"]
+[ext_resource type="Texture2D" uid="uid://bb28e3mkl5j8y" path="res://assets/sprites/player/up_2.png" id="12_f1ej7"]
+[ext_resource type="Texture2D" uid="uid://dbi03jw134owu" path="res://assets/sprites/player/up_3.png" id="12_i4ail"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dx0e4"]
 animations = [{
@@ -74,10 +74,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jm5j8"]
-radius = 15.0333
+radius = 26.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ivps1"]
-radius = 17.0
+radius = 27.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
@@ -87,7 +87,8 @@ script = ExtResource("1_jej6c")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 light_mask = 2
 visibility_layer = 13
-scale = Vector2(1.78125, 1.6875)
+position = Vector2(2.98023e-08, -1.19209e-07)
+scale = Vector2(3.08789, 2.79297)
 sprite_frames = SubResource("SpriteFrames_dx0e4")
 animation = &"left"
 

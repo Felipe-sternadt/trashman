@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://55y3ovsnky81"]
+
+[ext_resource type="Texture2D" uid="uid://o3c1fps1eu28" path="res://assets/sprites/select_background.jpg" id="1_0bpdh"]
+[ext_resource type="Script" uid="uid://d3jb03dpqnc66" path="res://scripts/credits_screen.gd" id="1_2ckv8"]
+[ext_resource type="Theme" uid="uid://dpm7ljvkyy1lv" path="res://default_btn.tres" id="3_0ctdu"]
+[ext_resource type="FontFile" uid="uid://c0lsscgf8r2f4" path="res://assets/sprites/RevMiniPixel.ttf" id="3_2fbfq"]
+
+[node name="CreditsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ckv8")
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_0bpdh")
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -739.0
+offset_top = 60.0
+offset_right = 740.0
+offset_bottom = 813.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_2fbfq")
+theme_override_font_sizes/font_size = 60
+text = "Trabalho desenvolvido para a UC de Usabilidade,
+desenvolvimento web, mobile e jogos
+ pelos alunos: 
+
+Felipe de Menezes Sternadt dos Santos;
+Guilherme van der laan;
+Matheus Subtil de Oliveira;
+Pedro Ferreira Guimarães; 
+Vithor Massing dos Santos.
+
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -235.0
+offset_top = -257.0
+offset_right = 240.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_0ctdu")
+theme_override_font_sizes/font_size = 50
+text = "VOLTAR"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 687.0
+offset_right = 1526.0
+offset_bottom = 767.0
+theme_override_colors/font_color = Color(0.678431, 0.247059, 0.0823529, 1)
+theme_override_fonts/font = ExtResource("3_2fbfq")
+theme_override_font_sizes/font_size = 80
+text = "OBRIGADO PELO SEU ACESSO!"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

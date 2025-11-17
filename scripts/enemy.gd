@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed: float = 120.0
 @export var chase_range: float = 800.0
 @export var avoid_stuck_time: float = 0.25
-@export var vulnerable_speed: float = 60.0   # fuga mais lenta
+@export var vulnerable_speed: float = 60.0   
 
 var vulnerable: bool = false
 var direction: Vector2 = Vector2.RIGHT
@@ -47,13 +47,13 @@ func _update_direction() -> void:
 
 	var dist := global_position.distance_to(player.global_position)
 
-	# FUGA SUAVE
+	
 	if vulnerable:
 		var flee_vec = (global_position - player.global_position).normalized()
 		direction = direction.lerp(flee_vec, 0.3).normalized()
 		return
 
-	# PERSEGUIÇÃO NORMAL
+	
 	if dist <= chase_range:
 		var vec = player.global_position - global_position
 
@@ -96,16 +96,16 @@ func _on_HitboxEnemy_body_entered(body: Node) -> void:
 
 	var m = get_tree().current_scene
 
-	# Player sem power → MORRE
+	
 	if not vulnerable:
 		if m and m.has_method("game_over"):
 			m.game_over()
 		return
 
-	# Player com power → INIMIGO MORRE
+	
 	if vulnerable:
 		if m and m.has_method("enemy_eaten"):
-			m.enemy_eaten(100)  # sempre 100 pontos
+			m.enemy_eaten(100)  
 		on_eaten()
 
 

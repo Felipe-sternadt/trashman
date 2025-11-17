@@ -158,7 +158,24 @@ layout_mode = 2
 theme = ExtResource("2_05l2w")
 text = "START"
 
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jqemp")
+
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jqemp")
+
+[node name="LeaderboardButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_05l2w")
+text = "LEADERBOARD"
+
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_jqemp")
+
+[node name="HSeparator5" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_jqemp")
 
@@ -171,12 +188,16 @@ text = "CREDITS"
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_013yr")
 
+[node name="HSeparator6" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_013yr")
+
 [node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
 size_flags_vertical = 4
 theme = ExtResource("2_05l2w")
 text = "QUIT GAME"
+icon_alignment = 1
 
 [node name="pacman" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -192,3 +213,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_tpml5")
 }
 autoplay = "reveal"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]

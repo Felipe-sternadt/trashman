@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b6wna252j2exe"
+path="res://.godot/imported/ERH BlueBeat 01 [loop].ogg-28f53fb43acd7999015469083997a316.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/ERH BlueBeat 01 [loop].ogg"
+dest_files=["res://.godot/imported/ERH BlueBeat 01 [loop].ogg-28f53fb43acd7999015469083997a316.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bb8efak47ovg0" path="res://assets/sprites/power_trash.png" id="1_wqaay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jhmv"]
-size = Vector2(28, 44)
+size = Vector2(40.5, 64)
 
 [node name="power lixo" type="Area2D"]
 collision_layer = 8
@@ -12,8 +12,8 @@ collision_mask = 2
 script = ExtResource("1_1jhmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(3.8147e-06, 3.8147e-06)
-scale = Vector2(0.0839844, 0.0898437)
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.117676, 0.125977)
 texture = ExtResource("1_wqaay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

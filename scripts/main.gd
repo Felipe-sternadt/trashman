@@ -1,4 +1,3 @@
-
 extends Node2D
 
 var score: int = 0
@@ -65,7 +64,7 @@ func add_score(amount: int) -> void:
 
 
 func enemy_eaten(_ignored) -> void:
-	score += 100   # SEMPRE 100, sem acúmulo
+	score += 100
 	_update_score_label()
 
 
@@ -100,9 +99,9 @@ func _on_power_timer_timeout() -> void:
 			e.set_vulnerable(false)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if power_mode:
-		power_time_left -= delta
+		power_time_left -= _delta
 		if power_time_left < 0:
 			power_time_left = 0
 		power_label.text = "Especial: %.1f" % power_time_left
@@ -119,13 +118,13 @@ func _on_game_timer_timeout() -> void:
 func _on_all_collected() -> void:
 	game_timer.stop()
 	power_timer.stop()
-	get_tree().change_scene_to_file("res://scenes/game_win.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/game_win.tscn")
 
 
 func _on_times_up() -> void:
 	game_timer.stop()
 	power_timer.stop()
-	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over.tscn")
 
 
 func _on_player_died() -> void:
@@ -135,7 +134,7 @@ func _on_player_died() -> void:
 	game_timer.stop()
 	power_timer.stop()
 
-	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over.tscn")
 
 
 func game_over() -> void:
@@ -145,4 +144,4 @@ func game_over() -> void:
 	game_timer.stop()
 	power_timer.stop()
 
-	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/game_over.tscn")

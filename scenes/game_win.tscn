@@ -1,12 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbxab2sx62aeu"]
+[gd_scene load_steps=7 format=3 uid="uid://bbxab2sx62aeu"]
 
 [ext_resource type="Script" uid="uid://c33aosslnsatj" path="res://scripts/game_win.gd" id="1_cnu5t"]
-[ext_resource type="Texture2D" uid="uid://dk0ag3qfe2so1" path="res://assets/sprites/background_menu.jpg" id="2_l1273"]
 [ext_resource type="AudioStream" uid="uid://ccs268ybpvu80" path="res://assets/audio/win.mp3" id="3_l1273"]
+[ext_resource type="Texture2D" uid="uid://2lsb5xl82cbi" path="res://assets/sprites/game_over_e_win.jpg" id="3_oueg3"]
+[ext_resource type="FontFile" uid="uid://c0lsscgf8r2f4" path="res://assets/sprites/RevMiniPixel.ttf" id="4_oueg3"]
+[ext_resource type="Theme" uid="uid://dpm7ljvkyy1lv" path="res://default_btn.tres" id="5_mtd57"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7ej5r"]
-font_size = 120
-font_color = Color(1, 0.203922, 0, 1)
+font = ExtResource("4_oueg3")
+font_size = 140
+font_color = Color(0.40337, 1.36794, 0, 1)
+outline_color = Color(1, 1, 0, 1)
+shadow_size = 5
 
 [node name="Game Win" type="CanvasLayer"]
 script = ExtResource("1_cnu5t")
@@ -25,38 +30,61 @@ volume_db = -3.0
 autoplay = true
 
 [node name="Background" type="TextureRect" parent="Control"]
+modulate = Color(1, 1, 1, 0.388235)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_l1273")
+texture = ExtResource("3_oueg3")
 
 [node name="Title" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 240.0
-offset_top = 201.0
-offset_right = 1685.0
-offset_bottom = 474.0
-text = "PAREBÉNS, VOCÊ VENCEU!"
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -937.5
+offset_top = 125.0
+offset_right = 937.5
+offset_bottom = 408.0
+grow_horizontal = 2
+text = "PARABÉNS,
+VOCÊ VENCEU!"
 label_settings = SubResource("LabelSettings_7ej5r")
+horizontal_alignment = 1
 
 [node name="RetryButton" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 716.0
-offset_top = 434.0
-offset_right = 1213.0
-offset_bottom = 593.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.0
+offset_top = 14.0
+offset_right = 281.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_mtd57")
 text = "REINICIAR
 "
 
 [node name="ExitButton" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 787.0
-offset_top = 674.0
-offset_right = 1139.0
-offset_bottom = 825.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.0
+offset_top = 223.0
+offset_right = 203.0
+offset_bottom = 353.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_mtd57")
 text = "EXIT
 "
 

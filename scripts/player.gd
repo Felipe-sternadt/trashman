@@ -13,7 +13,7 @@ var dir: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	var frames = SpriteFrames.new()
 
-	# RIGHT
+	#RIGHT
 	frames.add_animation("right")
 	frames.set_animation_loop("right", true)
 	frames.add_frame("right", load("res://assets/sprites/player/right_1.png"))
@@ -41,7 +41,7 @@ func _ready() -> void:
 	frames.add_frame("down", load("res://assets/sprites/player/down_2.png"))
 	frames.add_frame("down", load("res://assets/sprites/player/down_3.png"))
 
-	# DIE
+	#DIE
 	frames.add_animation("die")
 	frames.set_animation_loop("die", false)
 	frames.add_frame("die", load("res://assets/sprites/player/death.png"))
@@ -82,25 +82,21 @@ func _on_body_entered(body: Node) -> void:
 	if not alive:
 		return
 
-	# ⛔ IGNORA colisão consigo mesmo
 	if body == self:
 		return
 
-	# ⛔ Ignora colisões que não sejam inimigos
 	if not body.is_in_group("enemies"):
 		return
 
-	# Se inimigo vulnerável → PLAYER COME
 	if body.has_method("is_vulnerable") and body.is_vulnerable():
 		if body.has_method("on_eaten"):
 			body.on_eaten()
 
 		var m = get_tree().current_scene
 		if m and m.has_method("enemy_eaten"):
-			m.enemy_eaten(100)  # 100 pontos fixos
+			m.enemy_eaten(100)  
 		return
 
-	# Se inimigo normal → PLAYER MORRE
 	alive = false
 	anim.play("die")
 	anim.animation_finished.connect(_on_death_animation_finished)
